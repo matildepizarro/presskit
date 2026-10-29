@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body class="lock">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Matilde Pizarro</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -282,16 +282,6 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
 @media(prefers-reduced-motion:reduce){.gate{transition-duration:.01ms}.gl span,.gate .sunG,.pl .d,.eq i{animation:none!important}}
 </style>
 
-<noscript><style>.gate{display:none}body.lock{overflow:auto}</style></noscript>
-<div class="gate" id="gate" role="dialog" aria-label="Entrada">
-  <div class="sunG"></div>
-  <div class="in">
-    <div class="pre">Matilde Pizarro presenta</div>
-    <div class="gl" id="gl" aria-label="LLAMAS"></div>
-    <button class="btn" id="enter" type="button">Entrar y escuchar</button>
-    <p class="note">Esta página suena. Sube el volumen.</p>
-  </div>
-</div>
 <div class="prog" id="prog" aria-hidden="true"></div>
 <div class="cur" id="cur" aria-hidden="true"></div>
 <audio id="song" loop preload="auto" src="audio/LLAMAS.mp3"></audio>
@@ -323,18 +313,11 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
     <div class="stage" id="stage">
       <div class="sun" id="sun"></div>
       <div class="arch" id="arch"><img src="img/hero.jpg" alt="Matilde Pizarro cantando y tocando guitarra eléctrica con una correa rosada"></div>
-      <div class="badge" aria-label="En la música desde 2011">
-        <div class="disc"></div>
-        <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-          <text fill="#fff" font-family="DM Sans, sans-serif" font-weight="700" font-size="11.5" letter-spacing="2.6"><textPath href="#circ">EN LA MÚSICA DESDE · EN LA MÚSICA DESDE ·</textPath></text></svg>
-        <div class="core">2011</div>
-      </div>
     </div>
     <div class="credit">Foto: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze</a></div>
   </div>
 </section>
 
-<div class="ribbon" aria-hidden="true"><div class="track" id="track"></div></div>
 
 <section class="block" id="bio">
   <div class="wrap">
@@ -355,26 +338,6 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
       </figure>
     </div>
 
-    <div class="path">
-      <div class="kicker">Trayectoria</div>
-      <h3>Quince años de escenarios</h3>
-      <p class="hint">Cada barra está dibujada a escala. Toca una para ver el detalle.</p>
-      <div class="chart" id="chart">
-        <button class="lab" data-era="0">Time y Miopía</button>
-        <div class="lane"><button class="bar b1 on" data-era="0">2011 – 2019</button></div>
-        <button class="lab" data-era="1">Timbuka</button>
-        <div class="lane"><button class="bar b2" data-era="1">2018 – 2025</button>
-          <span class="mark" style="left:calc(43.75% + 50% * .1875)" data-t="EP · 2019" tabindex="0"></span>
-          <span class="mark" style="left:calc(43.75% + 50% * .3125)" data-t="Disco · 2020" tabindex="0"></span></div>
-        <button class="lab" data-era="2">Matilde Pizarro</button>
-        <div class="lane"><button class="bar b3" data-era="2" aria-label="2026 en adelante">26</button></div>
-        <div class="axis" aria-hidden="true"><span>2011</span><span>2015</span><span>2019</span><span>2023</span><span>2027</span></div>
-      </div>
-      <div class="detail pop" id="detail" aria-live="polite">
-        <div class="yrs" id="d-yrs">2011 – 2019</div>
-        <div><h4 id="d-title">Time y Miopía</h4><p id="d-text">Guitarrista en ambas bandas. Tocó en escenarios y festivales de Chile.</p><div class="tags" id="d-tags"><span>Guitarra</span><span>Festivales en Chile</span></div></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -491,11 +454,6 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
   /* Nombre: letras que reaccionan */
   $$('#name span').forEach(function(w){var t=w.textContent;w.textContent='';t.split('').forEach(function(c){var s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.textContent=c;w.appendChild(s)})});
 
-  /* Cinta */
-  var words=['Rock alternativo','Villa Alemana','Time','Miopía','Timbuka','Matilde Pizarro','Dream pop','Shoegaze'];
-  var html='';for(var k=0;k<2;k++){words.forEach(function(w){html+='<span>'+w+'</span><span><i>●</i></span>'})}
-  $('#track').innerHTML=html;
-
   /* Menú */
   var nav=$('#nav'),menu=$('#menu');
   menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
@@ -516,20 +474,6 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
       sun.style.setProperty('--sx',(x*-26).toFixed(1)+'px');sun.style.setProperty('--sy',(y*-26).toFixed(1)+'px')});
     stage.addEventListener('pointerleave',function(){arch.style.setProperty('--ry','0deg');arch.style.setProperty('--rx','0deg');sun.style.setProperty('--sx','0px');sun.style.setProperty('--sy','0px')});
   }
-
-  /* Trayectoria */
-  var eras=[
-    {y:'2011 – 2019',t:'Time y Miopía',p:'Guitarrista en ambas bandas. Tocó en escenarios y festivales de Chile.',g:['Guitarra','Festivales en Chile']},
-    {y:'2018 – 2025',t:'Timbuka',p:'Su proyecto solista, entre el indie folk y la psicodelia. Publicó un EP en 2019 y un disco en 2020, y tocó en universidades y salas de Chile y en festivales online de México y España.',g:['EP 2019','Disco 2020','México','España']},
-    {y:'2026 –',t:'Matilde Pizarro',p:'Nueva etapa bajo su nombre, con un sonido más eléctrico y banda en vivo. Publicó los singles TEXTURAS, VUELO y LLAMAS.',g:['TEXTURAS','VUELO','LLAMAS']}
-  ];
-  function setEra(i){
-    $$('#chart .bar').forEach(function(b){b.classList.toggle('on',+b.dataset.era===i)});
-    var d=eras[i];$('#d-yrs').textContent=d.y;$('#d-title').textContent=d.t;$('#d-text').textContent=d.p;
-    $('#d-tags').innerHTML=d.g.map(function(x){return '<span>'+x+'</span>'}).join('');
-    var box=$('#detail');box.classList.remove('pop');void box.offsetWidth;box.classList.add('pop');
-  }
-  $$('#chart [data-era]').forEach(function(b){b.addEventListener('click',function(){setEra(+b.dataset.era)})});
 
   /* TEXTURAS / VUELO */
   var sounds=['TEXTURAS: rock alternativo y shoegaze.','VUELO: dream pop e indie rock. <a href="https://youtu.be/Q4lnRH8x3vU" target="_blank" rel="noopener">Ver lyric video</a>'];
@@ -568,27 +512,18 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
 var d=document,h=d.documentElement,$=function(s,r){return (r||d).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s))};
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce)h.classList.add('js');
-var song=$('#song'),gate=$('#gate'),pill=$('#pl'),entered=false,ctx=null,an=null,data=null,beat=0,vol=.85;
-$('#gl').innerHTML='LLAMAS'.split('').map(function(c,i){return '<span style="--i:'+i+'">'+c+'</span>'}).join('');
+var song=$('#song'),pill=$('#pl'),ctx=null,an=null,data=null,beat=0,vol=.85;
+h.classList.add('go');
 $$('#name .ch').forEach(function(c,i){c.style.setProperty('--i',i)});
-
-/* Música */
 function fade(to,ms,cb){var s=song.volume,t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/ms);song.volume=Math.max(0,Math.min(1,s+(to-s)*k));if(k<1)requestAnimationFrame(f);else if(cb)cb()})(t0)}
 function analyser(){if(ctx)return;try{var AC=window.AudioContext||window.webkitAudioContext;ctx=new AC();var src=ctx.createMediaElementSource(song);an=ctx.createAnalyser();an.fftSize=256;an.smoothingTimeConstant=.82;src.connect(an);an.connect(ctx.destination);data=new Uint8Array(an.frequencyBinCount);ctx.resume()}catch(e){ctx=null;an=null}}
 ['play','pause'].forEach(function(ev){song.addEventListener(ev,function(){pill.classList.toggle('playing',!song.paused)})});
-function enter(){if(entered)return;entered=true;gate.classList.add('out');h.classList.add('go');d.body.classList.remove('lock');setTimeout(function(){gate.hidden=true},1400)}
 song.volume=0;
+var evs=['pointerdown','keydown','touchstart','click'];
+function onGesture(){evs.forEach(function(e){removeEventListener(e,onGesture,true)});analyser();if(song.paused){var p=song.play();if(p&&p.catch)p.catch(function(){});fade(vol,3000)}}
 var tried=song.play();
-function asked(){gate.classList.add('ask')}
-if(tried&&tried.then){tried.then(function(){fade(vol,3000);setTimeout(enter,1100);
-  var once=function(){analyser();['pointerdown','keydown','touchstart'].forEach(function(e){removeEventListener(e,once)})};
-  ['pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,once,{passive:true})})},asked)}else asked();
-function go(){analyser();song.volume=0;var p=song.play();if(p&&p.catch)p.catch(function(){});fade(vol,3000);enter()}
-$('#enter').addEventListener('click',function(e){e.stopPropagation();go()});
-gate.addEventListener('click',function(){if(gate.classList.contains('ask'))go()});
-pill.addEventListener('click',function(){analyser();if(ctx&&ctx.state==='suspended')ctx.resume();
-  if(song.paused){song.play();fade(vol,800)}else fade(0,500,function(){song.pause()})});
-
+if(tried&&tried.then){tried.then(function(){fade(vol,3000);evs.forEach(function(e){addEventListener(e,function(){analyser()},{once:true,capture:true})})},function(){evs.forEach(function(e){addEventListener(e,onGesture,true)})})}else evs.forEach(function(e){addEventListener(e,onGesture,true)});
+pill.addEventListener('click',function(ev){ev.stopPropagation();analyser();if(ctx&&ctx.state==='suspended')ctx.resume();if(song.paused){song.play();fade(vol,800)}else fade(0,500,function(){song.pause()})});
 /* Títulos por palabra */
 $$('section h2,.contact h2,.path h3').forEach(function(t){var w=t.textContent.trim().split(/\s+/);t.setAttribute('aria-label',w.join(' '));
   t.innerHTML=w.map(function(x,i){return '<span class="hw" aria-hidden="true"><span style="--i:'+i+'">'+x+'</span></span>'}).join(' ');t.dataset.io='1'});
@@ -597,7 +532,7 @@ $$('section h2,.contact h2,.path h3').forEach(function(t){var w=t.textContent.tr
 if(!reduce){
   var sel='.kicker:not(.hero .kicker),.bio .txt p,.bio .pic,.path .hint,.detail,.rel .r,.vid,.yt,.press a,.credit-line,.sub,.mailrow,.linkgrid .btn,.foot,.gal button,.pgrid button,.photos .credit';
   $$(sel).forEach(function(el){var sib=el.parentNode.children,i=Array.prototype.indexOf.call(sib,el);el.classList.add('rv');el.style.setProperty('--d',((i%4)*.09).toFixed(2)+'s')});
-  $('#chart').style.setProperty('--d','0s');$$('#chart .bar').forEach(function(b,i){b.style.setProperty('--d',(i*.25)+'s')});
+  
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');io.unobserve(el);
     if(el.classList.contains('rv'))setTimeout(function(){el.classList.remove('rv','in')},2200+(parseFloat(el.style.getPropertyValue('--d'))||0)*1000)})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   $$('.rv,[data-io],#chart').forEach(function(el){io.observe(el)});
