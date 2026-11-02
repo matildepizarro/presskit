@@ -377,9 +377,6 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
 .redes .wrap{position:relative}
 .redes .bgtxt{-webkit-text-stroke:2px rgba(59,16,48,.12)}
 .flames{transform-origin:50% 100%;scale:1 calc(1 + var(--beat,0)*.4)}
-.hero h1{translate:0 calc(var(--hp,0)*-90px);opacity:calc(1 - var(--hp,0)*.75)}
-.hero .lead,.hero .actions{translate:0 calc(var(--hp,0)*-50px)}
-.hero .sun{rotate:calc(var(--hp,0)*80deg)}
 .cur::after{content:attr(data-l);position:absolute;inset:0;display:grid;place-items:center;font:800 .52rem var(--body);letter-spacing:.08em;color:var(--ink)}
 .cur[data-l]{width:54px;height:54px;margin:-27px 0 0 -27px;background:var(--yellow);border-color:var(--ink)}
 .lyr .ln{display:block;transition:color .2s,translate .25s}
@@ -589,7 +586,6 @@ html,body{overflow-x:clip;max-width:100%}
       <button data-lb="fotos" data-credit="maka"><img src="img/mano.jpg" alt="Detalle de la guitarra con stickers y la correa rosada"><span class="cr">Foto: Maka Daze</span></button>
       <button data-lb="fotos"><img src="img/banda2.jpg" alt="Matilde Pizarro y su bajista tocando en vivo"></button>
     </div>
-    <p class="credit">Las fotos marcadas con “Foto: Maka Daze” son de <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a>.</p>
   </div>
 </section>
 
@@ -803,28 +799,11 @@ var $=function(s){return d.querySelector(s)},$$=function(s){return Array.prototy
 /* Letra: línea por línea */
 var n=0;$$('.lyr .lt p').forEach(function(p){p.innerHTML=p.innerHTML.split(/<br\s*\/?>/).map(function(l){return '<span class="ln" style="--i:'+(n++)+'">'+l+'</span>'}).join('')});
 if(reduce)return;
-/* Kickers que se decodifican */
-var ch='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&',kio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;kio.unobserve(e.target);var el=e.target,t=el.dataset.t,k=0,iv=setInterval(function(){el.textContent=t.split('').map(function(c,i){return c===' '||i<k?c:ch[Math.floor(Math.random()*ch.length)]}).join('');k+=.7;if(k>=t.length){el.textContent=t;clearInterval(iv)}},32)})},{threshold:.6});
-$$('.kicker').forEach(function(el){if(el.children.length||el.closest('.hero'))return;el.dataset.t=el.textContent;kio.observe(el)});
-/* Textos gigantes de fondo */
-function ghost(host,rows){if(!host)return;rows.forEach(function(r,i){var g=d.createElement('div');g.className='bgtxt'+(i?' g2':'');g.setAttribute('aria-hidden','true');g.style.top=r.top;g.textContent=r.t;host.insertBefore(g,host.firstChild);r.el=g});return rows}
-var ll=$('.llamas'),rd=$('#redes');
-var gl=ghost(ll,[{t:'LLAMAS · LLAMAS · LLAMAS · LLAMAS · LLAMAS',top:'1%',dir:-1},{t:'MATILDE PIZARRO · MATILDE PIZARRO · MATILDE',top:'42%',dir:1}]);
-var gr=ghost(rd,[{t:'ESCÚCHALA · ESCÚCHALA · ESCÚCHALA · ESCÚCHALA',top:'6%',dir:-1}]);
 /* Cursor con etiquetas */
 var cur=$('#cur');
 if(fine&&cur){var map=[['.vid','PLAY'],['.gal button','VER'],['.pgrid button','VER'],['.lc','IR'],['.igbtn','IG'],['.press a','LEER'],['.btn.copy','COPIAR']];
   addEventListener('pointerover',function(e){var l='';for(var i=0;i<map.length;i++){if(e.target.closest&&e.target.closest(map[i][0])){l=map[i][1];break}}if(l)cur.setAttribute('data-l',l);else cur.removeAttribute('data-l')},{passive:true});
   $$('.pgrid button').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;b.style.transform='perspective(700px) rotateY('+(x*16).toFixed(1)+'deg) rotateX('+(-y*16).toFixed(1)+'deg) scale(1.05)'});b.addEventListener('pointerleave',function(){b.style.transform=''})})}
-/* Movimiento ligado al scroll */
-var hero=$('.hero'),vid=$('.lvid'),cov=$('.lcover');
-function clamp(v){return Math.max(0,Math.min(1,v))}
-function sec(host,rows){if(!host||!rows)return;var r=host.getBoundingClientRect(),vh=innerHeight;if(r.bottom<-50||r.top>vh+50)return;var p=clamp((vh-r.top)/(vh+r.height));rows.forEach(function(g){g.el.style.translate=((p-.5)*(g.dir)*38)+'% 0'})}
-(function loop(){var vh=innerHeight;
-  if(hero){var hr=hero.getBoundingClientRect();hero.style.setProperty('--hp',clamp(-hr.top/Math.max(1,hr.height)).toFixed(3))}
-  sec(ll,gl);sec(rd,gr);
-  if(vid){var r=vid.getBoundingClientRect();if(r.top<vh&&r.bottom>0){var p=clamp((vh-r.top)/(vh*.75));vid.style.scale=(.88+.12*p).toFixed(3)}}
-  if(cov){var r2=cov.getBoundingClientRect();if(r2.top<vh&&r2.bottom>0)cov.style.rotate=(((r2.top+r2.height/2)/vh-.5)*-9).toFixed(2)+'deg'}
-  requestAnimationFrame(loop)})();
+
 })();
 </script></body></html>
