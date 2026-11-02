@@ -263,9 +263,9 @@ html.js .chart .mark{opacity:0;transition:opacity .5s 1.6s}
 html.js .chart.in .mark{opacity:1}
 .ribbon{transform:skewX(calc(var(--v,0)*1deg))}
 /* Cursor, botones y música */
-.cur{position:fixed;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border:2px solid var(--hot);border-radius:50%;pointer-events:none;z-index:300;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s}
+.cur{position:fixed;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border:1.5px solid var(--hot);border-radius:50%;pointer-events:none;z-index:300;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s}
 .cur.on{opacity:1}
-.cur.big{width:78px;height:78px;margin:-39px 0 0 -39px;background:rgba(232,67,143,.2)}
+.cur.big{width:38px;height:38px;margin:-19px 0 0 -19px;background:rgba(232,67,143,.12)}
 .btn{transition:transform .2s,background .2s,color .2s,translate .35s cubic-bezier(.2,.9,.2,1)}
 .cover{transition:transform .3s ease-out;will-change:transform}
 .pl{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:90;display:flex;align-items:center;gap:12px;background:var(--ink);color:var(--on-ink);border:0;border-radius:99px;padding:7px 18px 7px 7px;font:700 .85rem/1.15 var(--body);text-align:left;cursor:pointer;box-shadow:0 5px 0 var(--hot);opacity:0;translate:0 30px;pointer-events:none;transition:opacity .6s 1.8s,translate .6s 1.8s}
@@ -380,8 +380,8 @@ html.go .pl{opacity:1;translate:0 0;pointer-events:auto}
 .hero h1{translate:0 calc(var(--hp,0)*-90px);opacity:calc(1 - var(--hp,0)*.75)}
 .hero .lead,.hero .actions{translate:0 calc(var(--hp,0)*-50px)}
 .hero .sun{rotate:calc(var(--hp,0)*80deg)}
-.cur::after{content:attr(data-l);position:absolute;inset:0;display:grid;place-items:center;font:800 .62rem var(--body);letter-spacing:.1em;color:var(--ink)}
-.cur[data-l]{width:84px;height:84px;margin:-42px 0 0 -42px;background:var(--yellow);border-color:var(--ink)}
+.cur::after{content:attr(data-l);position:absolute;inset:0;display:grid;place-items:center;font:800 .52rem var(--body);letter-spacing:.08em;color:var(--ink)}
+.cur[data-l]{width:54px;height:54px;margin:-27px 0 0 -27px;background:var(--yellow);border-color:var(--ink)}
 .lyr .ln{display:block;transition:color .2s,translate .25s}
 .lyr .ln:hover{color:var(--lo);translate:10px 0}
 .lyr[open] .ln{animation:lnIn .8s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i)*70ms + .15s)}
@@ -417,6 +417,11 @@ html,body{overflow-x:clip;max-width:100%}
   .plat{font-size:.88rem;padding:.7em 1.1em}
   .lyr{padding:4px 18px}
 }
+
+.gal button{position:relative}
+.gal .cr{position:absolute;left:12px;bottom:12px;z-index:2;background:rgba(59,16,48,.85);color:var(--on-ink);font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:.4em .85em;border-radius:99px;opacity:0;translate:0 6px;transition:opacity .3s,translate .3s;pointer-events:none}
+.gal button:hover .cr,.gal button:focus-visible .cr{opacity:1;translate:0 0}
+@media(hover:none){.gal .cr{opacity:1;translate:0 0}}
 </style>
 
 <div class="prog" id="prog" aria-hidden="true"></div>
@@ -471,7 +476,6 @@ html,body{overflow-x:clip;max-width:100%}
       <figure class="pic" style="margin:0">
         <div class="dot"></div>
         <div class="a2"><img src="img/bn.jpg" alt="Matilde Pizarro con su guitarra y banda, en blanco y negro"></div>
-        <figcaption class="credit">Foto: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze</a></figcaption>
       </figure>
     </div>
 
@@ -578,14 +582,14 @@ html,body{overflow-x:clip;max-width:100%}
     <div class="kicker">Fotos</div>
     <h2>En vivo</h2>
     <div class="gal" id="gal">
-      <button data-lb="fotos"><img src="img/perfil.jpg" alt="Matilde Pizarro cantando de perfil bajo luz verde y rosa"></button>
-      <button data-lb="fotos"><img src="img/acustica.jpg" alt="Matilde Pizarro con guitarra acústica con stickers frente a un mural azul"></button>
-      <button data-lb="fotos"><img src="img/neon.jpg" alt="Matilde Pizarro tocando guitarra frente a un letrero de neón"></button>
+      <button data-lb="fotos" data-credit="maka"><img src="img/perfil.jpg" alt="Matilde Pizarro cantando de perfil bajo luz verde y rosa"><span class="cr">Foto: Maka Daze</span></button>
+      <button data-lb="fotos" data-credit="maka"><img src="img/acustica.jpg" alt="Matilde Pizarro con guitarra acústica con stickers frente a un mural azul"><span class="cr">Foto: Maka Daze</span></button>
+      <button data-lb="fotos" data-credit="maka"><img src="img/neon.jpg" alt="Matilde Pizarro tocando guitarra frente a un letrero de neón"><span class="cr">Foto: Maka Daze</span></button>
       <button data-lb="fotos"><img src="img/banda.jpg" alt="Matilde Pizarro cantando y su bajista en el escenario"></button>
-      <button data-lb="fotos"><img src="img/mano.jpg" alt="Detalle de la guitarra con stickers y la correa rosada"></button>
+      <button data-lb="fotos" data-credit="maka"><img src="img/mano.jpg" alt="Detalle de la guitarra con stickers y la correa rosada"><span class="cr">Foto: Maka Daze</span></button>
       <button data-lb="fotos"><img src="img/banda2.jpg" alt="Matilde Pizarro y su bajista tocando en vivo"></button>
     </div>
-    <p class="credit">Fotografías: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a></p>
+    <p class="credit">Las fotos marcadas con “Foto: Maka Daze” son de <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a>.</p>
   </div>
 </section>
 
@@ -627,7 +631,7 @@ html,body{overflow-x:clip;max-width:100%}
       <a class="btn ghost" href="https://www.twitch.tv/matildepizarro" target="_blank" rel="noopener">Twitch</a>
       <a class="btn ghost" href="https://www.setlist.fm/setlists/matilde-pizarro-7b868e54.html" target="_blank" rel="noopener">Setlist.fm</a>
     </div>
-    <div class="foot"><span>Matilde Pizarro · Villa Alemana, Chile</span><span>Fotografías: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a></span></div>
+    <div class="foot"><span>Matilde Pizarro · Villa Alemana, Chile</span><span>Fotos con crédito: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a></span></div>
   </div>
 </footer>
 
@@ -677,7 +681,7 @@ html,body{overflow-x:clip;max-width:100%}
   /* Visor */
   var lb=$('#lb'),lbi=$('#lbi'),lbc=$('#lbc'),group=[],idx=0,lastFocus=null;
   function show(){var b=group[idx];lbi.src=b.querySelector("img").src;lbi.alt=b.querySelector('img').alt;
-    lbc.innerHTML=(b.dataset.lb==='fotos'?'Foto: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a> · ':'Afiche · ')+(idx+1)+' de '+group.length}
+    lbc.innerHTML=(b.dataset.lb==='fotos'?(b.dataset.credit?'Foto: <a href="https://www.instagram.com/spacedaze__/" target="_blank" rel="noopener">Maka Daze / Space Daze</a> · ':'Foto · '):'Afiche · ')+(idx+1)+' de '+group.length}
   function open(b){group=$$('[data-lb="'+b.dataset.lb+'"]');idx=group.indexOf(b);lastFocus=b;lb.hidden=false;document.body.style.overflow='hidden';show();$('#lbx').focus()}
   function close(){lb.hidden=true;document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
   function step(d){idx=(idx+d+group.length)%group.length;show()}
